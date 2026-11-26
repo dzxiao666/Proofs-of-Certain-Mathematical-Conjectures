@@ -1,4 +1,4 @@
-import PublicConjectures.Incidence
+import PublicConjectures.Shannon.Incidence
 
 noncomputable section
 namespace Shannon
