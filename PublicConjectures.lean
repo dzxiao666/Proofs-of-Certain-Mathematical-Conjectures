@@ -1,0 +1,2 @@
+import PublicConjectures.Kings
+import PublicConjectures.Shannon
