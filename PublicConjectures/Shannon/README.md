@@ -2,7 +2,7 @@
 
 Orient the sides of a regular $n$-gon cyclically and divide each side into $k+1$ equal pieces. For each of the $k$ interior mark indices, join the corresponding marks on consecutive sides to draw an inscribed polygon. A triple intersection is a point in the relative interiors of three distinct drawn segments.
 
-**Theorem.** For an integer $n\ge 3$, some choice of $k$ gives a triple intersection if and only if $n\in\{3,4,6\}$.
+**Theorem.** For an integer $n\ge 3$, some choice of $k$ gives a triple intersection if and only if $n$ is 3, 4, or 6.
 
 Scott R. Shannon posed the classification in 2022. [OEIS A357216](https://oeis.org/A357216) · [A357235](https://oeis.org/A357235) · [A357254](https://oeis.org/A357254) · [Lean theorem and proof](Proof.lean)
 
@@ -10,9 +10,9 @@ Scott R. Shannon posed the classification in 2022. [OEIS A357216](https://oeis.o
 
 Put the vertices $v_i$ on the unit circle in cyclic order. Write $\theta=2\pi/n$ and $c=\cos\theta$, and read subscripts modulo $n$. At corner $i$ use the affine coordinates
 
-$$
+```math
 F_i(x,y)=v_i+x(v_{i+1}-v_i)+y(v_{i-1}-v_i).
-$$
+```
 
 The three vertices are noncollinear, so these coordinates are unique.
 
@@ -20,15 +20,15 @@ Let $t=j/(k+1)$ for $1\le j\le k$. Label by $(i,t)$ the segment with endpoints $
 
 A point at fraction $s$ along this segment from $F_i(0,t)$ has coordinates
 
-$$
+```math
 x=s(1-t),\qquad y=(1-s)t.
-$$
+```
 
-For $0<s<1$ these satisfy $x,y>0$ and $x+y<1$. Eliminating $s$ gives
+For $0<s<1$ these satisfy $x,y>0$ and $x+y<1$. Eliminating $s$ gives equation (1).
 
-$$
-x=1-t+y-y/t. \tag{1}
-$$
+```math
+x=1-t+y-\frac{y}{t}.
+```
 
 ## Which corners can meet
 
@@ -40,30 +40,30 @@ For $n\ge 5$, the cycle of corners has no three distinct pairwise adjacent verti
 
 ## Concurrence forces a rational cosine
 
-The unit-circle vertices satisfy $v_{i-1}+v_{i+1}=2c\,v_i$. Substituting $v_{i+2}=2c\,v_{i+1}-v_i$ in $F_{i+1}(x,y)$ gives
-$(y-x)v_i+(1+(2c-1)x-y)v_{i+1}$. Substituting $v_{i-1}=2c\,v_i-v_{i+1}$ in $F_i(1+2cx-y,x)$ gives the same expression. Hence
+The unit-circle vertices satisfy $v_{i-1}+v_{i+1}=2cv_i$. Substituting $v_{i+2}=2cv_{i+1}-v_i$ in $F_{i+1}(x,y)$ gives
+$(y-x)v_i+(1+(2c-1)x-y)v_{i+1}$. Substituting $v_{i-1}=2cv_i-v_{i+1}$ in $F_i(1+2cx-y,x)$ gives the same expression. This yields the change of coordinates (2).
 
-$$
-F_{i+1}(x,y)=F_i(1+2cx-y,x). \tag{2}
-$$
+```math
+F_{i+1}(x,y)=F_i(1+2cx-y,x).
+```
 
 Write the alleged common point as $F_i(X,Y)$, choosing $i,i+1$ to include all involved corners. A segment at $i$ imposes (1) on $(X,Y)$. A segment at $i+1$ with parameter $t$ has local coordinates $(Y,1+2cY-X)$ by (2). Substituting these coordinates into its line equation (1), and setting $q=1-t$, gives
 
-$$
+```math
 1+2cY-X=1-q+Y-Y/q.
-$$
+```
 
 Thus the segments from either corner impose equations of the same form
 
-$$
+```math
 U=1-q+Y-Y/q,
-$$
+```
 
 with $U=X$ and $q=t$ at $i$, or $U=1+2cY-X$ and $q=1-t$ at $i+1$. All these $q$ are rational numbers in $(0,1)$. Two distinct segments at one corner have distinct parameters, say $a$ and $b$. Subtracting their equations yields
 
-$$
+```math
 (a-b)\left(1-\frac{Y}{ab}\right)=0,
-$$
+```
 
 so $Y=ab$ and $U=(1-a)(1-b)$. Three distinct segments at a single corner would give $Y=ab=ad$ for three distinct parameters $a,b,d$, which is impossible since $a>0$.
 
