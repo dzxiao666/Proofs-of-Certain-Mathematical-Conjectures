@@ -22,14 +22,16 @@ Consider the $(r+1)^2$ test squares whose row and column both belong to $A$. Two
 
 ## Placement attaining the bound
 
-Define a second set of coordinates $B$ by shifting each member of $A$ up by one. When $m=3r+1$, the last shifted coordinate would fall off the board, so use $3r-1$ in its place. Explicitly,
+Define a second set of coordinates $B$ by shifting each member of $A$ up by one. When $m=3r+1$, the last shifted coordinate would fall off the board, so use $3r-1$ in its place. For that board size,
 
 ```math
-B=
-\begin{cases}
-\{3i+1\mid 0\le i<r\}\cup\{3r-1\}, & \text{if }m=3r+1,\\
-\{3i+1\mid 0\le i\le r\}, & \text{if }m=3r+2.
-\end{cases}
+B=\{3i+1\mid 0\le i<r\}\cup\{3r-1\}.
+```
+
+For $m=3r+2$, all the shifted coordinates fit on the board.
+
+```math
+B=\{3i+1\mid 0\le i\le r\}.
 ```
 
 Both sets have $r+1$ elements. They are disjoint because every member of $A$ is divisible by three, while every member of $B$ has remainder one or two. Every board coordinate lies within one of some element of $A$ and within one of some element of $B$. To see this, each set starts at $0$ or $1$, ends at $m-1$ or $m-2$, and has gaps of at most three between consecutive elements. Two integers at distance at most three cover all integers between them with their radius-one neighborhoods.
