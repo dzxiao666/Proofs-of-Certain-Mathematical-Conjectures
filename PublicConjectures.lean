@@ -1,2 +1,2 @@
-import PublicConjectures.Kings
-import PublicConjectures.Shannon
+import PublicConjectures.Kings.Proof
+import PublicConjectures.Shannon.Proof
