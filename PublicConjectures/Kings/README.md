@@ -25,7 +25,7 @@ Consider the $(r+1)^2$ test squares whose row and column both belong to $A$. Two
 Define a second set of coordinates $B$ by shifting each member of $A$ up by one. When $m=3r+1$, the last shifted coordinate would fall off the board, so use $3r-1$ in its place. For that board size,
 
 ```math
-B=\{3i+1\mid 0\le i<r\}\cup\{3r-1\}.
+B=\{3i+1\mid 0\le i\lt r\}\cup\{3r-1\}.
 ```
 
 For $m=3r+2$, all the shifted coordinates fit on the board.
