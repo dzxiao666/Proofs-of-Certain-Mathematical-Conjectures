@@ -1,4 +1,4 @@
-import PublicConjectures.Angle
+import PublicConjectures.Shannon.Angle
 
 noncomputable section
 namespace Shannon
