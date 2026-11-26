@@ -1,4 +1,4 @@
-import PublicConjectures.Geometry
+import PublicConjectures.Shannon.Geometry
 
 noncomputable section
 namespace Shannon
